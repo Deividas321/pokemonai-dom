@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-top: 60px; /* To prevent overlap with the fixed header */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.grid-item:hover {
+    transform: scale(1.5);
+}
+
+.grid-item span {
+    display: block;
+    margin: 10px 10px;
+}
+
+.grid-item img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+header {
+    /* background-color: #333; */
+    padding: 1px;
+    text-align: center;
+    margin-left: -1400px;
+    
+   
+}
+
+
+
+

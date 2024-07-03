@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Grid</title>
+    <link rel="stylesheet" href="poksyle.css">
+    <link rel="stylesheet" href="header.css">
+    
+</head>
+
+    <header>
+        <a href="../">Home</a>
+        <a href="../products/">Products</a>
+        <a href="../about-us/">About us</a>
+        <a href="../contact/">Contact</a>
+        <a href="../pokemonai/index.html">Pokemonai</a>
+    </header>
+
+<body>
+
+<div class="grid-container" id="pokemon-grid"></div>
+
+<script>
+    const pokemons = [
+        { name: "Pikachu", color: "yellow", form: "Rectangle", type: "Electric", img: "https://img.pokemondb.net/artwork/pikachu.jpg" },
+        { name: "Bulbasaur", color: "green", form: "Rectangle", type: "Grass/Poison", img: "https://img.pokemondb.net/artwork/bulbasaur.jpg" },
+        { name: "Charmander", color: "orange", form: "Rectangle", type: "Fire", img: "https://img.pokemondb.net/artwork/charmander.jpg" },
+        { name: "Squirtle", color: "blue", form: "Rectangle", type: "Water", img: "https://img.pokemondb.net/artwork/squirtle.jpg" },
+        { name: "Jigglypuff", color: "pink", form: "Circle", type: "Normal/Fairy", img: "https://img.pokemondb.net/artwork/jigglypuff.jpg" },
+        { name: "Meowth", color: "beige", form: "Rectangle", type: "Normal", img: "https://img.pokemondb.net/artwork/meowth.jpg" },
+        { name: "Gengar", color: "purple", form: "Rectangle", type: "Ghost/Poison", img: "https://img.pokemondb.net/artwork/gengar.jpg" },
+        { name: "Eevee", color: "brown", form: "Rectangle", type: "Normal", img: "https://img.pokemondb.net/artwork/eevee.jpg" },
+        { name: "Snorlax", color: "lightblue", form: "Rectangle", type: "Normal", img: "https://img.pokemondb.net/artwork/snorlax.jpg" },
+        { name: "Dragonite", color: "orange", form: "Rectangle", type: "Dragon/Flying", img: "https://img.pokemondb.net/artwork/dragonite.jpg" }
+    ];
+
+    const gridContainer = document.getElementById('pokemon-grid');
+
+pokemons.forEach(pokemon => {
+    const gridItem = document.createElement('div');
+    gridItem.className = 'grid-item';
+    gridItem.style.backgroundColor = pokemon.color;
+
+    const pokemonUrl = `https://www.pokemon.com/us/pokedex/${pokemon.name.toLowerCase()}`;
+
+    gridItem.innerHTML = `
+        <img src="${pokemon.img}" alt="${pokemon.name}">
+        <span>Name: ${pokemon.name}</span>
+        <span>Color: ${pokemon.color}</span>
+        <span>Form: ${pokemon.form}</span>
+        <span>Type: ${pokemon.type}</span>
+        <a href="${pokemonUrl}" target="_blank">Read more</a>
+    `;
+
+    gridContainer.appendChild(gridItem);
+});
+</script>
+</body>
+
+</html>
