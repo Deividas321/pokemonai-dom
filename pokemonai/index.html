@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Grid</title>
-    <link rel="stylesheet" href="poksyle.css">
-    <link rel="stylesheet" href="header.css">
-    
+    <link rel="stylesheet" href="./poksyle.css">
 </head>
 
-    <header>
-        <a href="../">Home</a>
-        <a href="../products/">Products</a>
-        <a href="../about-us/">About us</a>
-        <a href="../contact/">Contact</a>
-        <a href="../pokemonai/index.html">Pokemonai</a>
-    </header>
+<header>
+    <a href="../">Home</a>
+    <a href="../products/">Products</a>
+    <a href="../about-us/">About us</a>
+    <a href="../contact/">Contact</a>
+    <a href="../pokemonai/index.html">Pokemonai</a>
+</header>
 
 <body>
 
@@ -35,26 +33,25 @@
         { name: "Dragonite", color: "orange", form: "Rectangle", type: "Dragon/Flying", img: "https://img.pokemondb.net/artwork/dragonite.jpg" }
     ];
 
-  const gridContainer = document.getElementById('pokemon-grid');
+    const gridContainer = document.getElementById('pokemon-grid');
 
-pokemons.forEach(pokemon => {
-    const gridItem = document.createElement('div');
-    gridItem.className = 'grid-item';
-    gridItem.style.backgroundColor = pokemon.color;
+    pokemons.forEach(pokemon => {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        gridItem.style.backgroundColor = pokemon.color;
 
-    const pokemonUrl = `https://www.pokemon.com/us/pokedex/${pokemon.name.toLowerCase()}`;
+        const pokemonUrl = `https://www.pokemon.com/us/pokedex/${pokemon.name.toLowerCase()}`;
 
-    gridItem.innerHTML = `
-        <img src="${pokemon.img}" alt="${pokemon.name}">
-        <span>Name: ${pokemon.name}</span>
-        <span>Color: ${pokemon.color}</span>
-        <span>Form: ${pokemon.form}</span>
-        <span>Type: ${pokemon.type}</span>
-        <ahref="${pokemonUrl}" target="_blank">Read more</a>
-    `;
-    gridContainer.appendChild(gridItem);
-   
-});
+        gridItem.innerHTML = `
+            <img src="${pokemon.img}" alt="${pokemon.name}">
+            <span>Name: ${pokemon.name}</span>
+            <span>Color: ${pokemon.color}</span>
+            <span>Form: ${pokemon.form}</span>
+            <span>Type: ${pokemon.type}</span>
+            <a href="${pokemonUrl}" target="_blank">Read more</a>
+        `;
+        gridContainer.appendChild(gridItem);
+    });
 </script>
 </body>
 
